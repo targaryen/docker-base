@@ -27,7 +27,7 @@ RUN ln -s /scripts/clean_alpine.sh /clean.sh && \
         curl \
     && \
     # Add S6 for zombie reaping, boot-time coordination, signal transformation/distribution
-    curl -L https://github.com/targaryen/s6-overlay/releases/download/v1.18.1.5-nostatic/s6-overlay-amd64.tar.gz -o /tmp/s6.tar.gz && \
+    curl --verbose -L https://github.com/targaryen/s6-overlay/releases/download/v1.18.1.5-nostatic/s6-overlay-amd64.tar.gz -o /tmp/s6.tar.gz && \
     tar xzf /tmp/s6.tar.gz -C / && \
     rm /tmp/s6.tar.gz && \
     # Add goss for local, serverspec-like testing \
